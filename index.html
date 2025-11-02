@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Text Sender</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #resultPage { display: none; }
+    .box { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <div id="sendPage">
+    <h2>Send Text</h2>
+    <div class="box">
+      <input id="txt" type="text" placeholder="Type something..." style="width: 300px;">
+    </div>
+    <button onclick="send()">Send</button>
+  </div>
+
+  <div id="resultPage">
+    <h2>Result</h2>
+    <p id="output"></p>
+    <button onclick="back()">Back</button>
+  </div>
+
+  <script>
+    function send() {
+      const text = document.getElementById('txt').value;
+      document.getElementById('output').textContent = text;
+      document.getElementById('sendPage').style.display = 'none';
+      document.getElementById('resultPage').style.display = 'block';
+    }
+    function back() {
+      document.getElementById('sendPage').style.display = 'block';
+      document.getElementById('resultPage').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
